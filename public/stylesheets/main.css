@@ -2,14 +2,22 @@
     --main-color: #21252;
 }
 
-#navbarNav {
-    justify-content: space-between;
+main {
+    min-height: 100vh;
 }
+
+/* #navbarNav {
+    justify-content: space-between;
+} */
 
 .font-posts {
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.2;
+}
+
+#posts {
+    height: fit-content;
 }
 
 .post-column {

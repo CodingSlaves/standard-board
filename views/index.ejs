@@ -29,13 +29,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse w-100" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-between w-100" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
@@ -45,42 +45,42 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <% if (ID) { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login.ejs">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/join.ejs">Join</a>
-                    </li>
-                <% } else { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><% ID %></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout.ejs">Logout</a>
-                    </li>
-                <% } %>
+                <% //if (ID) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><% //ID %></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout.ejs">Logout</a>
+                </li>
+                <% //} else { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login.ejs">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/join.ejs">Join</a>
+                </li>
+                <% //} %>
             </ul>
         </div>
     </nav>
 
     <main id="main" class="row m-0">
-        <div id="posts" class="row col-10 m-auto py-5 font-posts shadow">
-            <a class="post-column row col-12 m-0 py-3 border-bottom" href="post.html">
+        <div id="posts" class="row col-10 mx-auto py-5 font-posts shadow">
+            <a class="post-column row col-12 m-0 py-3 border-bottom" href="post.ejs">
                 <span class="col-7">제목제목제목제목제목</span>
                 <span class="col-2 text-center">글쓴이</span>
                 <span class="col-2 text-center">YYYY-MM-DD</span>
                 <span class="col-1 text-center">3</span>
             </a>
 
-            <% for (var i = 0; i < postList.length; i++) { %>
-                <a class="post-column row col-12 m-0 py-3 border-bottom" href="post<%= *******여기다가 뭐 넣어야함 ㅇㅋ?****** %>.html">
-                    <span class="col-7"><%= postList[i].title %></span>
-                    <span class="col-2 text-center"><%= postList[i].author.ID %></span>
-                    <span class="col-2 text-center"><%= postList[i].Date %></span>
-                    <span class="col-1 text-center"><%= postList[i].comment.length %></span>
+            <% //for (var i = 0; i < postList.length; i++) { %>
+                <a class="post-column row col-12 m-0 py-3 border-bottom" href="post<%= //******** %>.ejs">
+                    <span class="col-7"><%= //postList[i].title %></span>
+                    <span class="col-2 text-center"><%= //postList[i].author.ID %></span>
+                    <span class="col-2 text-center"><%= //postList[i].Date %></span>
+                    <span class="col-1 text-center"><%= //postList[i].comment.length %></span>
                 </a>
-            <% } %>
+            <% //} %>
         </div>
     </main>
 </body>
