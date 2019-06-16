@@ -33,9 +33,12 @@ const post = require('../models/postModel');
 
 router.get('/',(req,res)=>{
   res.render('index.ejs');
-})
+});
 router.get('/login.ejs',(req,res)=>{
   res.render('login.ejs');
-})
+});
+router.get('/join.ejs',(req,res)=>{
+  res.render('join.ejs');
+});
 
 module.exports = router;
