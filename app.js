@@ -4,9 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const db = require('./db');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/login');
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use(session({
     secure: false
   }
 }));
+
+db();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
