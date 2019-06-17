@@ -7,6 +7,11 @@ html, body {
     line-height: 1.2;
 }
 
+nav.position-fixed {
+    z-index: 10;
+    background-color: #f8f9facc;    /*bg-light + 투명도*/
+}
+
 main {
     min-height: 100vh;
 }
@@ -24,4 +29,11 @@ main {
 }
 .post-column:hover {
     color: #000000;
+}
+
+.help-block.with-errors > ul > li {
+    display: none;
+}
+.help-block.with-errors > ul > li:nth-child(1) {
+    display: list-item;
 }
