@@ -40,5 +40,14 @@ router.get('/login.ejs',(req,res)=>{
 router.get('/join.ejs',(req,res)=>{
   res.render('join.ejs');
 });
+router.get('/logout.ejs',(req,res)=>{
+  res.render('logout.ejs');
+});
+router.get('/post.ejs',(req,res)=>{
+  res.render('post.ejs');
+});
+router.get('/posting.ejs',(req,res)=>{
+  res.render('posting.ejs');
+});
 
 module.exports = router;
