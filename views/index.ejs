@@ -42,42 +42,42 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <% //if (ID) { %>
+                <% if (ID) { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><% //ID %></a>
+                    <a class="nav-link" href="#"><% ID %></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout.ejs">Logout</a>
                 </li>
-                <% //} else { %>
+                <% } else { %>
                 <li class="nav-item">
                     <a class="nav-link" href="/login.ejs">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/join.ejs">Join</a>
                 </li>
-                <% //} %>
+                <% } %>
             </ul>
         </div>
     </nav>
 
     <main id="main" class="row m-0">
         <div id="posts" class="row col-10 mx-auto py-5 font-posts shadow">
-            <a class="post-column row col-12 m-0 py-3 border-bottom" href="post.ejs">
+            <%# <a class="post-column row col-12 m-0 py-3 border-bottom" href="post.ejs">
                 <span class="col-7">제목제목제목제목제목</span>
                 <span class="col-2 text-center">글쓴이</span>
                 <span class="col-2 text-center">YYYY-MM-DD</span>
                 <span class="col-1 text-center">3</span>
-            </a>
+            </a> %>
 
-            <% //for (let i = 0; i < postList.length; i++) { %>
-                <a class="post-column row col-12 m-0 py-3 border-bottom" href="post<%= //******** %>.ejs">
-                    <span class="col-7"><%= //postList[i].title %></span>
-                    <span class="col-2 text-center"><%= //postList[i].author.ID %></span>
-                    <span class="col-2 text-center"><%= //postList[i].Date %></span>
-                    <span class="col-1 text-center"><%= //postList[i].comment.length %></span>
+            <% for (let i = 0; i < postList.length; i++) { %>
+                <a class="post-column row col-12 m-0 py-3 border-bottom" href="/post/<%= i %>">
+                    <span class="col-7"><%= postList[i].title %></span>
+                    <span class="col-2 text-center"><%= postList[i].author.ID %></span>
+                    <span class="col-2 text-center"><%= postList[i].Date %></span>
+                    <span class="col-1 text-center"><%= postList[i].comment.length %></span>
                 </a>
-            <% //} %>
+            <% } %>
         </div>
     </main>
 </body>
