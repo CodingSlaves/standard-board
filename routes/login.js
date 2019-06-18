@@ -5,7 +5,7 @@ const crypto = require('crypto');
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  res.render('login.html');
+  res.render('login');
 });
 
 router.post('/',(req,res,next)=>{
@@ -13,10 +13,11 @@ router.post('/',(req,res,next)=>{
   .then((result) => {
     if(result) {
       req.session.ID = req.body.ID;
-      res.redirect('/main');
+      res.render('redirect',{path:'/',message:'로그인 완료'});
     }
   }).catch((err) => {
-    
+      console.error(err);
+      res.render('error',{error:err});
   });
 })
 
