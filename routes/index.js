@@ -32,6 +32,15 @@ router.get('/', (req, res, next) => {
       });
   }
 });
+router.get('/logout.ejs',(req,res)=>{
+  res.render('logout.ejs');
+});
+router.get('/post.ejs',(req,res)=>{
+  res.render('post.ejs');
+});
+router.get('/posting.ejs',(req,res)=>{
+  res.render('posting.ejs');
+});
 
 // router.get('/',(req,res)=>{
 //   res.render('index.ejs');

@@ -23,13 +23,10 @@
     <!-- 로컬 -->
     <link rel="stylesheet" href="/stylesheets/main.css">
     <script src="/scripts/main.js"></script>
-
-    <link rel="stylesheet" href="../public/stylesheets/main.css">
-    <script src="../public/script/main.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100">
+    <nav class="navbar navbar-expand-lg navbar-light position-fixed w-100">
         <a class="navbar-brand" href="/">JBang</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,7 +70,7 @@
                 <span class="col-1 text-center">3</span>
             </a>
 
-            <% //for (var i = 0; i < postList.length; i++) { %>
+            <% //for (let i = 0; i < postList.length; i++) { %>
                 <a class="post-column row col-12 m-0 py-3 border-bottom" href="post<%= //******** %>.ejs">
                     <span class="col-7"><%= //postList[i].title %></span>
                     <span class="col-2 text-center"><%= //postList[i].author.ID %></span>
