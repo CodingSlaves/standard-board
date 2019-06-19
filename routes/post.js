@@ -39,3 +39,5 @@ router.post('/:num/comment',async(req,res,next)=>{
         res.render('redirect',{path:`${req.params.num}`,message:'댓글 달기 실패'});
     }
 });
+
+module.exports = router;

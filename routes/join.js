@@ -23,3 +23,5 @@ router.post('/',(req,res,next)=>{
         res.render('error',{error:err});
     });
 });
+
+module.exports = router;

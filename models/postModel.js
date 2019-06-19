@@ -34,11 +34,12 @@ const postSchema = new mongoose.Schema({
     }
 });
 
-postSchema.plugin(autoInc.plugin,{
-    model:'Post',
-    field:'num',
-    startAt:0,
-    incrementBy:1
+mongoose.connection.on('connected',()=>{
+    autoInc.initialize(mongoose.connection);
+    autoInc.plugin(postSchema, {
+        model: 'Post',
+        field: 'num'
+    });
 });
 
-module.exports = mongoose.model('Post',postSchema);
+module.exports = mongoose.model('Post', postSchema);

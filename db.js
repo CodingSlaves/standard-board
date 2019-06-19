@@ -3,7 +3,7 @@ const autoInc = require('mongoose-auto-increment');
 mongoose.Promise = global.Promise;
 module.exports = () => {
     function connect() {
-        const connection = mongoose.connect('mongodb://localhost:27017/standard-board', {
+        mongoose.connect('mongodb://localhost:27017/standard-board', {
                 useNewUrlParser: true
             })
             .then(() => {
@@ -12,9 +12,7 @@ module.exports = () => {
             .catch(err => {
                 console.error(err);
             });
-        autoInc.initialize(connection);
     }
     connect();
-
     mongoose.connection.on('disconnected', connect);
 };

@@ -6,8 +6,12 @@ const logger = require('morgan');
 const session = require('express-session');
 const db = require('./db');
 
+db();
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/login');
+const joinRouter = require('./routes/join');
+const postRouter = require('./routes/post');
 
 const app = express();
 
@@ -30,10 +34,11 @@ app.use(session({
   }
 }));
 
-db();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/post',postRouter);
+app.use('/join',joinRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
