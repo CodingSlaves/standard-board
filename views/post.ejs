@@ -43,48 +43,46 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <% //if (ID) { %>
+                <% if (ID) { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><% //ID %></a>
+                    <a class="nav-link" href="#"><% ID %></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout.ejs">Logout</a>
                 </li>
-                <% //} else { %>
+                <% } else { %>
                 <li class="nav-item active">
                     <a class="nav-link" href="/login.ejs">Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/join.ejs">Join</a>
                 </li>
-                <% //} %>
+                <% } %>
             </ul>
         </div>
     </nav>
 
     <main id="main" class="row align-items-center m-0">
         <div id="post" class="col-7 row mx-auto py-5 px-4 shadow">
-            <span class="col-12 display-4 mb-3">Tilte</span>
+            <span class="col-12 display-4 mb-3"><%= post.title %></span>
             <div class="col-12 row m-0 justify-content-between">
-                <span class="text-muted">제작자</span>
-                <span class="ml-auto text-muted">YYYY-MM-DD</span>
+                <span class="text-muted"><%= post.author.ID %></span>
+                <span class="ml-auto text-muted"><% post.Date %></span>
             </div>
             <div class="py-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cumque distinctio ipsa beatae ut?
-                Voluptatum molestias alias reprehenderit libero dolorem nam sint id debitis unde cupiditate suscipit,
-                odit, quia odio?
+                <%= post.contents %>
             </div>
 
             <div id="comments" class="col-12 row m-0">
-                <% //for (let i = 0; i < postList[i].contents.length; i++) { %>
+                <% for (let i = 0; i < post.comment.length; i++) { %>
                 <div class="row col-12 m-0 py-3 border-bottom">
-                    <div class="col-2 pr-0">덧글쓴자</div>
-                    <div class="col">덧글 내용내용내용내용</div>
+                    <div class="col-2 pr-0">post.comment[i].author.ID</div>
+                    <div class="col">post.comment[i].contents</div>
                 </div>
-                <% //} %>
-                <form class="col-12 row mt-4 mx-0 p-0 form-inline">
+                <% } %>
+                <form class="col-12 row mt-4 mx-0 p-0 form-inline" active="/<%= post.num %>/comment" method="POST">
                     <label for="post-comment" class="sr-only">Comment</label>
-                    <input type="text" class="form-control col mr-2" id="post-comment" placeholder="Enter Comment">
+                    <input type="text" class="form-control col mr-2" id="post-comment" placeholder="Enter Comment" name="contents">
                     <input type="submit" class="btn btn-primary col-2">
                 </form>
             </div>

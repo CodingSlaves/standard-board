@@ -43,21 +43,21 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <% //if (ID) { %>
+                <% if (ID) { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><% //ID %></a>
+                    <a class="nav-link" href="#"><% ID %></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout.ejs">Logout</a>
                 </li>
-                <% //} else { %>
+                <% } else { %>
                 <li class="nav-item active">
                     <a class="nav-link" href="/login.ejs">Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/join.ejs">Join</a>
                 </li>
-                <% //} %>
+                <% } %>
             </ul>
         </div>
     </nav>
@@ -65,7 +65,7 @@
     <main id="main" class="row align-items-center m-0">
         <div class="col-7 row mx-auto py-5 px-4 shadow">
             <span class="col-12 display-4 mb-5">Login</span>
-            <form id="form-login" class="col-12" role="form" data-toggle="validator">
+            <form id="form-login" class="col-12" action="/login" method="POST" role="form" data-toggle="validator">
                 <div class="form-group">
                     <label for="login-id">ID</label>
                     <input type="text" class="form-control" id="login-id" aria-describedby="login-help"
