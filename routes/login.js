@@ -5,11 +5,12 @@ const crypto = require('crypto');
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  res.render('login');
+  res.render('login',{ID:null});
 });
 
 router.post('/',(req,res,next)=>{
-  user.findOne({ID:req.body.ID, PW:crypto.createHash('sha512').update(req.body.PW).digest('base64')})
+  const PW =  crypto.createHash('sha512').update(req.body.PW).digest('base64');
+  user.findOne({ID:req.body.ID, PW:PW})
   .then((result) => {
     if(result) {
       req.session.ID = req.body.ID;

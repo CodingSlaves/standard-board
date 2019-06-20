@@ -39,7 +39,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/posting.ejs">Posting</a>
+                    <a class="nav-link" href="/post/upLoad">Posting</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -48,14 +48,14 @@
                     <a class="nav-link" href="#"><% ID %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout.ejs">Logout</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 <% } else { %>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/login.ejs">Login <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/join.ejs">Join</a>
+                    <a class="nav-link" href="/join">Join</a>
                 </li>
                 <% } %>
             </ul>
@@ -76,13 +76,14 @@
             <div id="comments" class="col-12 row m-0">
                 <% for (let i = 0; i < post.comment.length; i++) { %>
                 <div class="row col-12 m-0 py-3 border-bottom">
-                    <div class="col-2 pr-0">post.comment[i].author.ID</div>
-                    <div class="col">post.comment[i].contents</div>
+                    <div class="col-2 pr-0"><%= post.comment[i].author.ID %></div>
+                    <div class="col"><%= post.comment[i].contents %></div>
                 </div>
                 <% } %>
-                <form class="col-12 row mt-4 mx-0 p-0 form-inline" active="/<%= post.num %>/comment" method="POST">
+                <form class="col-12 row mt-4 mx-0 p-0 form-inline" action="/post/comment" method="POST">
                     <label for="post-comment" class="sr-only">Comment</label>
                     <input type="text" class="form-control col mr-2" id="post-comment" placeholder="Enter Comment" name="contents">
+                    <input type="hidden" value="<%= post._id %>" name="id">
                     <input type="submit" class="btn btn-primary col-2">
                 </form>
             </div>

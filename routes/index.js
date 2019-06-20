@@ -23,7 +23,8 @@ router.get('/', (req, res, next) => {
         path: 'author'
       })
       .then((result) => {
-        res.rendr('index', {
+        res.render('index', {
+          ID:req.session.ID,
           postList: result
         });
       }).catch((err) => {

@@ -40,7 +40,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/posting.ejs">Posting <span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="/post/upLoad">Posting <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -49,14 +49,14 @@
                     <a class="nav-link" href="#"><% ID %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout.ejs">Logout</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 <% } else { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login.ejs">Login</a>
+                    <a class="nav-link" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/join.ejs">Join</a>
+                    <a class="nav-link" href="/join">Join</a>
                 </li>
                 <% } %>
             </ul>
@@ -66,14 +66,14 @@
     <main id="main" class="row m-0">
 
         <div id="posting" class="col-10 mx-auto p-5 shadow">
-            <form id="form-posting" class="col-12" action="/upload" method="POST" role="form" data-toggle="validator">
+            <form id="form-posting" class="col-12" action="/post/upLoad" method="POST" role="form" data-toggle="validator">
                 <div class="form-group mt-5">
                     <label class="display-4" for="posting-title">Title</label>
                     <input id="posting-title" class="form-control" type="text" placeholder="Enter Title" name="title" required>
                 </div>
                 <div class="form-group mt-5">
                     <label class="display-4" for="posting-contents">Contents</label>
-                    <textarea id="posting-contents" class="form-control" name="Contents" rows="10" placeholder="Enter Contents"
+                    <textarea id="posting-contents" class="form-control" name="contents" rows="10" placeholder="Enter Contents"
                         required></textarea>
                 </div>
                 <div class="form-group mt-5">

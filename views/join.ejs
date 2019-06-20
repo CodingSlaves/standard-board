@@ -41,7 +41,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/posting.ejs">Posting</a>
+                    <a class="nav-link" href="/post/upLoad">Posting</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -50,14 +50,14 @@
                     <a class="nav-link" href="#"><% ID %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout.ejs">Logout</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 <% } else { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login.ejs">Login</a>
+                    <a class="nav-link" href="/login">Login</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/join.ejs">Join <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/join">Join <span class="sr-only">(current)</span></a>
                 </li>
                 <% } %>
             </ul>
@@ -70,7 +70,7 @@
             <form id="form-join" class="col-12" action="/join" method="POST" role="form" data-toggle="validator">
                 <div class="form-group">
                     <label for="join-id">ID</label>
-                    <input type="text" class="form-control" id="join-id" aria-describedby="join-help"
+                    <input name="ID" type="text" class="form-control" id="join-id" aria-describedby="join-help"
                         placeholder="Enter the ID to use" required>
                     <div class="help-block with-errors form-text text-danger"></div>
                     <small id="join-help" class="form-text text-muted">We'll never share your privacy with anyone
@@ -78,7 +78,7 @@
                 </div>
                 <div class="form-group">
                     <label for="join-password">Password</label>
-                    <input type="password" data-minlength="8" id="join-password" class="form-control" placeholder="Password" required>
+                    <input name="PW" type="password" data-minlength="8" id="join-password" class="form-control" placeholder="Password" required>
                     <div class="help-block with-errors form-text text-danger"></div>
                 </div>
                 <div class="form-group">

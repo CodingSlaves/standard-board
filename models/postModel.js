@@ -22,24 +22,16 @@ const postSchema = new mongoose.Schema({
     title:{
         type:String
     },
-    num:{
-        type:Number,
-        unique:true,
-        index:true
-    },
     comment:[commentSchema],
     Date:{
         type:Date,
         default:Date.now
+    },
+    id:{
+        type:Number
     }
 });
 
-mongoose.connection.on('connected',()=>{
-    autoInc.initialize(mongoose.connection);
-    autoInc.plugin(postSchema, {
-        model: 'Post',
-        field: 'num'
-    });
-});
-
 module.exports = mongoose.model('Post', postSchema);
+autoInc.initialize(mongoose.connection);
+// postSchema.plugin(autoInc.plugin,'Post');

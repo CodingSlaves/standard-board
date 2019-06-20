@@ -38,7 +38,7 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/posting.ejs">Posting</a>
+                    <a class="nav-link" href="/post/upLoad">Posting</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -47,14 +47,14 @@
                     <a class="nav-link" href="#"><% ID %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout.ejs">Logout</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 <% } else { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login.ejs">Login</a>
+                    <a class="nav-link" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/join.ejs">Join</a>
+                    <a class="nav-link" href="/join">Join</a>
                 </li>
                 <% } %>
             </ul>
@@ -63,7 +63,7 @@
 
     <main id="main" class="row m-0">
         <div id="posts" class="row col-10 mx-auto py-5 font-posts shadow">
-            <%# <a class="post-column row col-12 m-0 py-3 border-bottom" href="post.ejs">
+            <%# <a class="post-column row col-12 m-0 py-3 border-bottom" href="post">
                 <span class="col-7">제목제목제목제목제목</span>
                 <span class="col-2 text-center">글쓴이</span>
                 <span class="col-2 text-center">YYYY-MM-DD</span>
@@ -71,7 +71,7 @@
             </a> %>
 
             <% for (let i = 0; i < postList.length; i++) { %>
-                <a class="post-column row col-12 m-0 py-3 border-bottom" href="/post/<%= i %>">
+                <a class="post-column row col-12 m-0 py-3 border-bottom" href="/post/<%= postList[i]._id %>">
                     <span class="col-7"><%= postList[i].title %></span>
                     <span class="col-2 text-center"><%= postList[i].author.ID %></span>
                     <span class="col-2 text-center"><%= postList[i].Date %></span>

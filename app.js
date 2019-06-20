@@ -36,7 +36,7 @@ app.use(session({
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/login', usersRouter);
 app.use('/post',postRouter);
 app.use('/join',joinRouter);
 
