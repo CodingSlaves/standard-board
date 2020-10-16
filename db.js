@@ -3,7 +3,7 @@ const autoInc = require('mongoose-auto-increment');
 mongoose.Promise = global.Promise;
 module.exports = () => {
     function connect() {
-        mongoose.connect('mongodb://localhost:27017/standard-board', {
+        mongoose.connect('mongodb://mongo:27017/standard-board', {
                 useNewUrlParser: true
             })
             .then(() => {
